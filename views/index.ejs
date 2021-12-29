@@ -1,0 +1,114 @@
+<%- include('partials/main')%>
+
+    <div class="container">
+        <header>
+            <div class="card bg-dark text-light mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="im1.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-md-8">
+                                    <h1>DorkoSprono</h1>
+                                    <h3>Web Developer</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut suscipit quae itaque
+                                        ipsam temporibus ea, quisquam id ipsum possimus commodi iste rem vero vitae
+                                        maiores sit dolor. Quaerat, pariatur sed!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="row">
+            <div class="col-md-4 py-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Skills</h1>
+                        <% for(var i=0; i<skills.length; i++) {%>
+                            <div class="py-3">
+                                <h5>
+                                    <%= skills[i].title%>
+                                </h5>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style=<%=skills[i].w%>>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 py-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Experience</h1>
+
+                        <ul>
+                            <% for(var i=0; i < info.length; i++) {%>
+                                <li>
+                                    <h2>
+                                        <%= info[i].name%>
+                                    </h2>
+                                    <h5>
+                                        <%= info[i].from%> - <%= info[i].to%>
+                                    </h5>
+                                    <p>
+                                        <%= info[i].p%>
+                                    </p>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="second" class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-body bg-dark">
+                        <div class="row">
+                            <div class="col-md-12 my-2">
+                                <h1 class="text-center text-light">Portfolio</h1>
+                            </div>
+                            <% for(var i=0; i < pro.length; i++) {%>
+                                <div class="col-md-4 p-2">
+                                    <div class="card h-100">
+                                        <div class="overflow">
+                                            <img src=<%=pro[i].image%>
+                                            alt=""
+                                            class="card-img-top"
+                                            />
+                                        </div>
+                                        <div class="card-body">
+                                            <h3>
+                                                <%= pro[i].name%>
+                                            </h3>
+                                            <p>
+                                                <%= pro[i].description%>
+                                            </p>
+                                            <a href="#!">Know More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+
+                                    <div class="col-md-12 mt-4">
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-light">More Projects</a>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+
+<%- include('partials/footer')%>
